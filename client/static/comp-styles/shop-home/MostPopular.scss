@@ -1,0 +1,289 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.most-popular__grid {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    max-height: 670px;
+    .half {
+        width: 49%;
+        display: flex;
+        justify-content: space-between;
+        img {
+            width: 100%;
+            height: calc(100%);
+            object-fit: cover;
+            max-height: 578px;
+        }
+        &.half.preview img {
+            max-height: unset;
+        }
+    }
+    .preview {
+        padding: 25px;
+        box-shadow: 0px 9px 25.92px 1.08px rgba(0, 0, 0, 0.07);
+    }
+    .wrap {
+        flex-wrap: wrap;
+        .quarter {
+            width: 48.5%;
+            position: relative;
+            z-index: 0;
+            &.active {
+                z-index: 9;
+                img {
+                    box-shadow: 0px 9px 25.92px 1.08px rgba(0, 0, 0, 0.07);
+                    // border: 10px solid #ed484f;
+                }
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border: 6px solid transparent;
+        }
+        &.mobile-only {
+            display: none;
+        }
+    }
+    .most-popular_info {
+        padding: 0 25px 0px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+    }
+    .avatar {
+        width: 27px;
+        height: 27px;
+        min-width: 27px;
+        min-height: 27px;
+        img {
+            width: 27px;
+            height: 27px;
+            min-width: 27px;
+            min-height: 27px;
+            object-fit: cover;
+        }
+    }
+    .most-popular__comments {
+        max-height: 300px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+}
+
+.most-popular__media {
+    hr {
+        margin: 25px 0 25px 0;
+    }
+    .read-all {
+       white-space: nowrap;
+        a {
+            color: #201e1e;
+            &:hover {
+                color: #ed484f;
+            }
+        }
+    }
+}
+.most-popular__grid .wrap .quarter {
+    &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 20px;
+    }
+}
+
+@include display1400 {
+    .most-popular__grid .most-popular_info {
+        padding: 0 20px 0 20px;
+    }
+}
+
+@include display1200 {
+    .most-popular__grid .preview {
+        padding: 0;
+    }
+    .most-popular__grid .most-popular_info {
+        padding: 20px;
+    }
+}
+
+@include tablet {
+    .most-popular__grid .preview {
+        width: 78%;
+    }
+    .most-popular__grid .wrap .quarter {
+        width: 100%;
+        height: 100%;
+        
+        // &:nth-child(3), &:nth-child(4) {
+        //     display: none;
+        // }
+        &:nth-child(2),&:nth-child(1) {
+            margin-bottom: 0;
+        }
+    }
+    .most-popular__grid .wrap img {
+        max-height: 150px;
+    }
+    .most-popular__grid .half {
+        // justify-content: flex-start;
+    }
+    .most-popular__media hr {
+        margin: 15px 0 15px 0;
+    }
+    .most-popular__grid .preview {
+        padding: 0;
+    }
+    .most-popular__grid .wrap {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 20%;
+    }
+    // .most-popular__grid {
+    //     flex-wrap: wrap;
+    //     max-height: unset;
+    // }
+    // .most-popular__grid .half img {
+    // }
+    // .most-popular__grid .wrap .quarter {
+    //     &:nth-child(3), &:nth-child(4) {
+    //         display: none;
+    //     }
+    // }
+}
+
+@include tablet768 {
+    .most-popular__grid {
+        flex-direction: column;
+        max-height: unset;
+    }
+    .most-popular__grid .preview {
+        width: 100%;
+        align-items: flex-start;
+    }
+    .most-popular__grid .wrap .quarter {
+        width: 24%;
+        // margin-top: 20px;
+        &:nth-child(3), &:nth-child(4) {
+            display: flex;
+        }
+    }
+    .most-popular__grid .most-popular__comments {
+        max-height: 350px;
+    }
+    .most-popular__grid .wrap {
+        flex-direction: row;
+        width: 100%;
+    }
+    .most-popular__grid .wrap.mobile-only {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .most-popular__grid .wrap.desktop-only {
+        display: none;
+    }
+}
+
+@include phone640 {
+    .most-popular__grid .preview {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .most-popular__grid .half.half.preview img {
+        max-height: 540px;
+    }
+    .most-popular__grid .half img.desktop-only {
+        display: none;
+    }
+    .most-popular__grid .half img.mobile-only {
+        display: block;
+    }
+    .most-popular__comment {
+        .most-popular__comment-info {
+            margin-right: auto;
+        }
+    }
+    .most-popular__grid .most-popular_info {
+        width: 100%;
+    }
+    .most-popular__grid .most-popular__comments {
+        max-height: unset;
+    }
+    // .most-popular__grid .wrap .quarter {
+    //     width: 49%;
+    //     margin-top: 4px;
+    //     &:nth-child(1) {
+    //         margin-bottom: 0;
+    //     }
+    // }
+    // .most-popular__grid .wrap {
+    //     flex-wrap: wrap;
+    // }
+    // .most-popular__grid .preview {
+    //     margin-bottom: 30px;
+    // }
+}
+
+@include phone {
+    .most-popular__grid .half.half.preview img {
+        max-height: 400px;
+    }
+    .most-popular__grid .wrap .quarter {
+        
+        
+    }
+}

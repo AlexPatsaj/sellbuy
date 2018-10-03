@@ -1,0 +1,55 @@
+.footer-menu__apps {
+	& svg {
+		margin: 5px 0;
+		width: 168px;
+		height: 48px;
+		max-height: 70px;                
+	}
+}
+
+
+.footer-menu__socials {
+	& a {
+        & svg {
+            width: 25px;
+            height: 25px;
+            margin: 10px 15px;
+            fill:#BEBEBE;
+            transition: all .3s ease;
+            max-height: 60px;
+        }
+        &:hover {
+            svg {
+                fill: #ed484f;
+            }
+        }
+    }
+}
+
+.footer-bottom__country {	
+    & svg {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 8px;
+    }
+}
+
+
+@include phone640 {
+	.footer-menu__apps {
+		& a {
+			& svg {
+                width: 60%;
+                height: auto;
+            }
+		}
+	}
+
+
+    .footer-menu__socials {
+    	& svg {
+            width: 45%;
+            height: auto;
+        }
+    }
+}

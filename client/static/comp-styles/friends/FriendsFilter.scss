@@ -1,0 +1,127 @@
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.FriendsFilter {
+  margin-bottom: 30px;
+
+  &-btn {
+    display: none;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #eeeeee;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    height: 43px;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &-items {
+    display: flex;
+    &-label {
+      display: none;
+      @include tablet {
+        display: block;
+        margin: 0 -20px;
+        padding: 0 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 15px solid #eeeeee;
+        text-transform: uppercase;
+      }
+    }
+    @include tablet {
+      position: fixed;
+      top: 0;
+      z-index: 1050;
+      right: -100%;
+      bottom: 0;
+      background-color: white;
+      padding: 20px;
+      min-width: 80%;
+      max-width: 80%;
+      flex-direction: column;
+      transition: right 0.3s linear;
+
+      &.open {
+        right: 0;
+      }
+    }
+  }
+
+  &-field {
+    width: 100%;
+    :not(:first-of-type) {
+      margin-left: 10px;
+    }
+    @include tablet {
+      width: auto;
+      max-width: none;
+      margin: 0 -20px;
+      padding: 0 20px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      &:first-of-type {
+        margin-left: -20px;
+      }
+      :not(:first-of-type) {
+        margin-left: -20px;
+      }
+      :last-of-type {
+        margin-right: -20px;
+      }
+      :not(:last-child) {
+        border-bottom: 5px solid #eeeeee;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.FriendsSearch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12.5px;
+
+  &-input[type='text'] {
+    background: #FFFFFF;
+    border: 1px solid rgba(149, 152, 154, 0.7);
+    padding: 10px 15px;
+    flex-grow: 1;
+    font-size: 12px;
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: unset;
+    background-color: #ed484f;
+    width: 39px;
+    height: 39px;
+    svg {
+      transform: scale(-1, 1);
+      width: 17px;
+      height: 17px;
+      fill: #fff;
+    }
+  }
+}

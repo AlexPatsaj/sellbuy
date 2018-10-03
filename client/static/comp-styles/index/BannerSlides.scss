@@ -1,0 +1,134 @@
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+
+.banner-slides {
+    .slider-block {
+        position: relative;
+        // .header-banner .header-banner__info, .header-banner .header-banner__discount-badge {
+        //     left: 50px;
+        // }
+        .slick-dots li button:before {
+            width: 13px;
+            height: 13px;
+            font-size: 13px;
+        }
+        .slick-dots {
+            z-index: 10;
+            bottom: 15px;
+        }
+        .slick-dots li {
+            margin: 0 3px;
+            width: 13px;
+            height: 13px;
+        }
+        .slick-dots li.slick-active button:before {
+            opacity: 1;
+            color: #ED484F;
+        }
+        
+        .slick-dots li button:hover:before {
+            opacity: .75;
+            color: #ED484F;
+        }
+        
+    }
+    .slick-slider {
+        width: 100%;
+        margin: auto;
+    }
+
+    /* the slides */
+    // .slick-slide {
+    //     margin: 0 10px;
+    // }
+    // /* the parent */
+    // .slick-list {
+    //     margin: 0 -10px;
+    // }
+    // .slider-wrapper {
+    //     display: block;
+    // }
+}
+
+
+
+.-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    svg {
+        height: 50px;
+        width: 41px;
+    }
+    &:hover {
+        svg {
+            fill: #ed484f;
+        }
+    }
+}
+.-prev {
+    left: -10px;
+    transform: rotate(90deg)
+}
+.-next {
+    right: -10px;
+    transform: rotate(-90deg)
+}
+
+@include tablet768 {
+    // main .container, footer .container {
+    //     max-width: 100%;
+    // }
+}

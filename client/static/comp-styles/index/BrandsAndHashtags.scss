@@ -1,0 +1,72 @@
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.brands-and-hashtags {
+    .scrollbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .bah-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .bah-logo {
+            padding: 20px;
+        }
+        .hashtag {
+            padding: 5px;
+            border: 1px solid #201e1e;
+            &::first-letter {
+                color: #ed484f;
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+.Subscription {
+  padding: 35px 0;
+
+  background: #f6f6f7;
+
+  &-wrapper {
+    padding: 0 15px;
+  }
+
+  &-title {
+    margin: 0 0 27px;
+
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &-input {
+    input {
+      display: block;
+      width: 90%;
+      margin: 0 auto 17px;
+      padding: 12px 15px;
+
+      font-size: 16px;
+      line-height: 20px;
+
+      background-color: #F7F7F8;
+      border: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background: #fff;
+
+      @include input-placeholder {
+        color: #b7b7b7;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      margin: 0 auto;
+      padding: 12px 25px;
+      font-size: 16px;
+      line-height: 20px;
+
+      border-radius: 5px;
+    }
+  }
+
+  @media (min-width: 530px) {
+    &-wrapper {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    &-input {
+      display: flex;
+      flex-wrap: nowrap;
+
+      & input {
+        margin: 0;
+
+        flex: 1 1 auto;
+      }
+
+      & .btn {
+        border-radius: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}

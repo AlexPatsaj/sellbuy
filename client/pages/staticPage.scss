@@ -1,0 +1,37 @@
+.staticPage {
+  padding-top:20px;
+  max-width:700px;
+  margin:0 auto;
+
+  h1 {
+    color:#d24147;
+    margin-bottom:30px;
+  }
+
+  table {
+    text-align:left;
+
+    th { 
+      font-weight:600;
+    }
+    td , th{
+      padding:0 5px;
+      border:solid thin #ccc;
+    }
+  }
+
+  .title {
+    font-weight:600;
+    font-size:1.2em;
+  }
+
+  ul.items {
+    list-style-type:circle;
+    display:block; 
+
+    li {
+      display:block;
+    }
+  }
+}
+

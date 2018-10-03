@@ -1,0 +1,167 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+} 
+
+/** this is a shit code fix this :S */ 
+.modal-wrapper.add-form .modal-form {
+  margin: 0 auto;
+}
+
+.signInModal {  
+  justify-content:center; 
+
+  .modal-body { 
+  }
+
+  .error {
+    color:#d24147;
+    margin:0;
+  }
+
+  .modal-bodyClass { 
+    padding:25px 20px 10px 25px;
+    width:100% !important; 
+  }
+
+  input { 
+    height:44px; 
+  }
+}
+
+.sign-wrapper__social{
+  display:flex; 
+  flex-direction: row; 
+
+  .btn.facebook {
+    margin-right:10px !important;
+  }
+}
+
+.modal-form.sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        margin-bottom: 0px;
+    }
+    .underline {
+        margin-left: 10px;
+        cursor: pointer;
+        &:hover {
+            color: #ed484f;
+        }
+    }
+    .react-tabs {
+        width: 100%;
+    }
+    .sign-wrapper {
+        width: 100%;
+        max-width: 400px;
+    }
+    .react-tabs__tab-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+        .or {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 20px 0;
+            .text {
+                margin: 0 20px;
+                white-space: nowrap;
+            }
+        }
+        .btn {
+            margin: 20px 0;
+            max-width: 200px;
+            width: 100%;
+            padding: 0;
+            height: 43px;
+            &.facebook, &.google {
+                max-width: 400px;
+                width: 100%;
+                padding: 10px 30px;
+                font-size: 1em;
+                margin: 10px 0;
+                svg {
+                    margin-right: 10px;
+                }
+            }
+
+            
+        }
+    }
+}
+
+.signIn-title{ 
+    text-align: center;
+    padding: 0 0 19px 0; 
+}
+
+.signIn__forgotPassword {
+  padding-top:30px;
+}
+
+.signIn__submit {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+@include tablet768 {
+  .signInModal {
+    .modal-bodyClass { 
+      margin-top:0 !important; 
+      padding:27px 5px 10px 5px;
+      min-height:100vh;
+    }
+  } 
+}

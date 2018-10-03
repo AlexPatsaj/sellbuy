@@ -1,0 +1,68 @@
+// @import 'styles/settings.colors';
+@import 'styles/normalize'; 
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1280 {
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+.index-banners {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+}
+
+main.f6f6f7 {
+    .fff {
+        &.pb {
+            padding-bottom: 25px;
+        }
+    }
+}
+
+
+@include display1600 {
+    .index-banners {
+        padding: 0px;
+    }
+}
+
+@include tablet {
+    .index-banners {
+        padding: 0;
+    }
+}
+
+@include display1280 {
+    main, footer {
+        .container {
+            max-width: 91.5vw;
+        }
+    }
+}
+
+@include phone640 {
+    .index-banners {
+        flex-direction: column;
+    }
+}

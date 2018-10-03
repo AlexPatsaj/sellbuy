@@ -1,0 +1,231 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.mail {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    svg {
+        fill: #201e1e;
+        margin: 0 7px;
+        width: 21px;
+        height: 22px;
+    } // svg {
+    //     width: 20px;
+    //     height: 13px;
+    // }
+    .mail-amount {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 19px;
+        width: 19px;
+        border-radius: 50%;
+        color: #fff;
+        background: #ed484f;
+        position: absolute;
+        top: -12px;
+        right: -4px;
+        font-size: .7em;
+    }
+
+    .header__popup-close {
+     top: 54px;
+     right: -204px;
+    }
+
+    &.open {
+        .mail-dropdown {
+            transition: all 0s ease;
+            transform: scale(1);
+            opacity: 1;
+            z-index: 20;
+        }
+    }
+
+    .mail-dropdown {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        width: 240px;
+        top: 54px;
+        left: -210px;
+        box-shadow: 0px 9px 25.92px 1.08px rgba(0, 0, 0, 0.07);
+        transition: all 0s ease;
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+        min-width: 450px;
+
+        .dropdown-triangle-up {
+            right: 207px;
+        }
+        .mail-wrapper {
+            background-color: #fff;
+            padding: 18px 31px;
+            .mail-dropdown__link {
+                display: flex;
+                justify-content: flex-start; // border-bottom: 1px solid #ededed;
+                padding-bottom: 10px;
+                width: 100%;
+                a {
+                    text-decoration: none;
+                    color: #ed484f;
+                }
+            }
+
+            .mail-dropdown__message {
+                display: flex;
+                align-items: flex-start;
+                border-bottom: 1px solid #ededed;
+                padding: 20px 0;
+                width: 100%;
+                .mail-dropdown__interlocutor-avatar {
+                    margin-right: 18px;
+                }
+                .mail-dropdown__interlocutor-message {
+                    .mail-dropdown__interlocutor-data {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        width: 100%;
+                        padding-bottom: 15px;
+                        .mail-dropdown__interlocutor-name {
+                            font-size: 1em;
+                            font-weight: 600;
+                        }
+                        .mail-dropdown__interlocutor-date {
+                            color: #b7b7b7;
+                        }
+                    }
+                    .mail-dropdown__message {
+                        padding: 0;
+                        border: none;
+                        color: #656565;
+                    }
+                }
+                &:last-child {
+                    border-bottom: 1px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .mail {
+        position: absolute;
+        right: 108px;
+        top: 124px;
+        z-index: 130;
+        opacity: 0;
+        transition: all .3s ease;
+        display: none;
+        .mail-dropdown {
+            left: -320px;
+            top: 52px;
+            .dropdown-triangle-up {
+                right: 93px;
+            }
+        }
+        svg {
+            width: 27px;
+            height: 19px;
+        }
+    }
+    .mobile-opened {
+        .mail {
+            // opacity: 1;
+            // display: flex;
+            // justify-content: center;
+        }
+    }
+}
+
+@include tablet768 {
+    .mail {
+        width: unset;
+        left: unset;
+        right: 260px;
+        top: 120px;
+    }
+    .mobile-opened {
+        .mail {
+
+            .mail-dropdown {
+                left: -270px;
+                .dropdown-triangle-up {
+                    right: 143px;
+                }
+            }
+        }
+    }
+}
+
+@include phone640 {
+    .mobile-opened {
+        .mail {
+            top: 147px;
+            left: 25px;
+            right: unset;
+            display: none;
+            width: 42px;
+            opacity: 1;
+            transform: translate(20px);
+        }
+    }
+}
+
+@include phone {
+    .mail {
+        display: none;
+        opacity: 0;
+        top: 119px;
+    }
+}

@@ -1,0 +1,113 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.topbar {
+    padding: 10px 20px 10px 0px;
+    .topbar-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0;
+        list-style: none;
+        width: 100%;
+        .topbar-list__element {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background-color: #fff;
+            margin: 0;
+            a{
+                width: 100%;
+                color: #201e1e;
+                padding: 12px 0;
+                text-align: center;
+            }
+            &:first-child {
+                margin-left: 0;
+                
+            }
+            &.active {
+                background-color: #201e1e;
+                color: #fff;
+                a{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .topbar-misc {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        .topbar-sortby {
+            min-width: 200px;
+        }
+    }
+}
+@include tablet {
+    .topbar{
+        padding:20px 20px 0px 20px;
+    }
+}
+@include tablet768 {
+    .topbar {
+        .topbar-list{
+            .topbar-list__element {
+
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+@include phone640 {
+    .topbar {
+        display: none;
+    }
+}

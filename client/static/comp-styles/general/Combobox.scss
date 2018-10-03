@@ -1,0 +1,142 @@
+.sbp-combobox {
+  width: 100%;
+  margin: 5px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+  
+  & .sbp-combobox__control {
+    border: 1px solid #e4e4e4;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: none;
+
+    &:hover {
+      border-color: #e4e4e4;
+    }
+  }
+  
+  & .sbp-combobox__menu {
+    margin-top: -1px;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+    background-color: #fff;
+  }
+
+  & .sbp-combobox__menu-list {
+    max-height: 200px;
+  }
+
+  & .sbp-combobox__option {
+    &:active {
+      background-color: transparent;
+    }
+  }
+
+  & .sbp-combobox__option--is-focused {
+    background-color: #f7f7f8;
+  }
+
+  & .sbp-combobox__option--is-selected {
+    background-color: #201e1e;
+  }
+
+  & .sbp-combobox__menu-list--is-multi {
+    & .sbp-combobox__option--is-selected {
+      background-color: transparent;
+    }
+  }
+
+
+  & .sbp-combobox__indicator-separator {
+    display: none;
+  }
+
+  & .sbp-combobox__indicator-clear {
+    color: #ed484f;
+    font-size: 11px;
+    margin-right: 5px;
+  }
+
+  & .sbp-combobox__indicators {
+    transition: all .3s linear;
+    right: 1px;
+    padding: 0 4px;
+
+    & svg {
+      width: 13px;
+      height: 8px;
+      transition: all .3s ease;
+    }
+  }
+
+  & .sbp-combobox__value-container {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: calc(100% - 96px);
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 8px;
+    margin-top: 3px;
+
+    & .sbp-combobox__value-list {
+      display: flex;
+      position: relative;
+      font-size: 11px;
+
+      & input {
+        height: 0;
+        width: 0;
+      }
+
+      & .sbp-combobox__single-value {
+        position: relative;
+        transform: none;
+        max-width: 100%;
+        margin-right: 2px;
+      }
+    }
+
+    & .sbp-combobox__label {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+  }
+
+  & .sbp-combobox__search {
+    & input {
+      width: 100%;
+      padding: 8px;
+      background-color: #f7f7f7;
+      color: #979797;
+
+      ::placeholder {
+        color: #979797;
+        opacity: 1;
+      }
+    }
+
+    & .sbp-combobox__search-btns {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 8px;
+
+      & svg {
+        width: 16px;
+        height: 16px;
+        opacity: .35;
+      }
+    }
+  }
+
+}

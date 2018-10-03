@@ -1,0 +1,149 @@
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.index-store {
+    max-width: 272px;
+    width: 100%;
+    background-color: #fff;
+    .store-bg {
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 150px;
+        }
+        .logo {
+            position: absolute;
+            bottom: -22px;
+            left: 22px;
+            
+            img {
+                border-radius: 50%;
+                height: 45px;
+                width: 45px;
+                min-height: 45px;
+                min-width: 45px;
+                box-shadow: 0px 2px 10px 0px rgba(83, 80, 80, 0.1);
+            }
+        }
+    }
+    .store-name {
+        padding: 40px 30px 10px 30px;
+        .store__media-parameters {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .store-name__info {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .store-products {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 30px 15px;
+        .visit-store {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.264);
+            opacity: 0;
+            transition: all .2s ease;
+            .btn.black {
+                margin: 0;
+            }
+        }
+        .store-product {
+            margin: 5px;
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                max-height: 55px;
+            }
+        }
+        .amount {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-height: 55px;
+            padding: 0 5px;
+            
+            background-color: #e4e4e4;
+            font-size: .8em;
+        }
+        .amount p{
+            margin: 0;
+        }
+        &:hover {
+            .visit-store {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@include display1600 {
+  
+    .index-store .store-products {
+        padding: 24px 15px;
+    }
+    .index-store .store-name {
+        padding: 40px 20px 10px 20px;
+    }
+}

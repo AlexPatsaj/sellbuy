@@ -1,0 +1,95 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.feed-main {
+    width: calc(54% - 40px);
+    max-width:700px; /** else it becomes F* huge**/ 
+    margin-left:20px; /** because of polyfill**/    
+    margin-right:20px; /** because of polyfill**/    
+    
+    .post-type {
+        margin-bottom:30px;
+        background-color: #fff;
+    }
+}
+
+@include display1600 {
+    .feed-main {
+        width: calc(50% - 40px);/** you have 2 margins at 20px each => 20*2 = 40px , flex fixes this for you... but since we have  a sticky non flex comp we need to have it right **/ 
+    }
+}
+
+@include display1400 {
+    .feed-main { 
+        width: calc(50% - 40px);/** you have 2 margins at 20px each => 20*2 = 40px **/ 
+    }
+}
+
+@include tablet {
+    .feed-main {
+        width: calc(50% - 40px); /** you have 2 margins at 20px each => 20*2 = 40px **/ 
+        &.expanded {
+            width: 100%;
+        }
+    }
+}
+
+@include tablet768 {
+    .feed-main {
+        width: calc(65% - 20px); /** you have 1 margins because we hide the left  **/ 
+        max-width:700px;
+        margin-left:0;
+        margin-right:0;
+    }
+}
+
+@include phone640 {
+    .feed-main {
+        width:100%; 
+    }
+}

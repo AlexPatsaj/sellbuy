@@ -1,0 +1,212 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.grid__blocks {
+    display: flex;
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    .grid__block {
+        position: relative;
+        display: flex;
+        margin: 6px 15px;
+        h3, 
+        .grid__info {
+            position: absolute;
+        }
+        .grid__block-price {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #ed484f;
+            z-index: 9;
+            strike {
+                font-size: .6em;
+                font-weight: 500;
+                color: #000000;
+                transform: translateY(-50px) translateX(0px);
+                margin-bottom: -5px;
+                text-align: right;
+            }
+            .grid__block-shipping-price {
+                font-size: .45em;
+                font-weight: 500;
+                white-space: nowrap;
+                color: #000000;
+                transform: translateX(25px) translateY(-10px);
+            }
+        }
+        .grid__info {
+            background-color: rgba(247,247,247,0.8);
+            left: 0;
+            right: 0;
+            transition: all .5s ease;
+            top: calc(100% - 75px);
+            bottom: 0;
+            padding: 20px;
+            color: #201e1e;
+            z-index: 1;
+            h3 {
+                transition: all .5s ease;
+                width: calc(100% - 143px);
+                top: calc(100% - 73px);
+                font-size: 1em; 
+                max-height:1em;
+                overflow:hidden; /*** product name too large? too bad click for preview :P */
+            }
+
+            h4 {
+                font-size: 0.9em; 
+                font-weight: 400;
+                position:absolute; /** I'm not going to try to find the comon def :( */ 
+                top:calc(100% - 58px);
+            }
+
+            a { 
+                color:#ed484f;
+            }
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            cursor: zoom-in;
+            transition: all 1s ease;
+            transform-origin: bottom;
+        }
+        &.half {
+            width: 51%;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        &.third {
+            width: 24.6%;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        &.half {
+            .grid__discount-badge {
+                top: -5px;
+                transform: scale(.9);
+                transform-origin: top;
+                .grid__discount-amount {
+                    width: 69px;
+                    height: 61px;
+                    left: -5px;
+                }
+            }
+        }
+        &.third {
+            .grid__discount-badge {
+                top: -5px;
+                transform: scale(.9);
+                transform-origin: top;
+                .grid__discount-amount {
+                    font-size: .8em;
+                    height: 57%;
+                    left: -11px;
+                }
+                svg {
+                    width: 47px;
+                    height: 60px;
+                }
+            }
+            &:last-child {
+                .save-widget {
+                    .save-widget__dropdown {
+                        left: -220px;
+                        transform-origin: top right;
+                        .save-widget__h4 {
+                            padding: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        //Small ones
+        &.quarter {
+            background-color: transparent;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26.5%;
+            margin: 0;
+            position: relative;
+            .one {
+                display: flex;
+                height: 50%;
+                position: relative;
+                cursor: pointer;
+                margin: 6px 15px;
+                .grid__discount-badge {
+                    top: -5px;
+                    transform: scale(.9);
+                    transform-origin: top;
+                    .grid__discount-amount {
+                        font-size: .7em;
+                        height: 49%;
+                        left: -15px;
+                    }
+                    svg {
+                        width: 39px;
+                        height: 50px;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@include tablet {
+
+}

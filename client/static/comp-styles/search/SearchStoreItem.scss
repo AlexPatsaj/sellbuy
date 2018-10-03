@@ -1,0 +1,256 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css";
+
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.index-store {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+
+  .store-name {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .store__media-parameters {
+      display: flex;
+      align-items: center;
+      padding: 2px 0;
+    }
+
+    .store-name__address {
+      color: #939393;
+    }
+
+    .logo {
+      img {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        min-height: 100px;
+        min-width: 100px;
+        box-shadow: 0px 2px 10px 0px rgba(83, 80, 80, 0.1);
+      }
+    }
+
+    & .store-name__tags {
+      color: #ed484f;
+
+      & .store-name__tags-item {
+        margin-left: 5px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      & .store-name__tags-label {
+        color: #201e1e;
+      }
+    }
+  }
+
+  .store-products {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .store-product {
+      height: 200px;
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .amount {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0 20px;
+      margin-left: 20px;
+      background-color: #e4e4e4;
+      font-size: .8em;
+    }
+
+    .amount p{
+      margin: 0;
+    }
+  }
+
+  .store-link {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .btn {
+      margin-top: 15px;
+    }
+
+    & .store-link__discount {
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      & .store-link__discount-label {
+        color: #ed484f;
+      }
+    }
+
+    & .store-link__discount-follow {
+      opacity: 0;
+      transition: opacity .2s linear;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    & .store-link__discount-follow {
+      opacity: 1;
+    }
+  }
+}
+
+@include display1400 {
+  .index-store {
+    .store-products {
+      .store-product {
+        height: 170px;
+      }
+      .amount {
+        padding: 0 10px;
+        margin-left: 10px;
+      }
+    }
+    .store-name {
+      .logo {
+        img {
+          height: 75px;
+          width: 75px;
+          min-height: 75px;
+          min-width: 75px;
+        }
+      }
+    }
+  }
+}
+
+@include display1200 {
+ .index-store {
+   .store-products {
+     .store-product:nth-child(2) {
+       display: none;
+     }
+   }
+ }
+}
+
+@include tablet768 {
+  .index-store {
+    .store-products {
+      display: none;
+    }
+  }
+}
+
+@include phone640 {
+  .index-store {
+    .store-name {
+      padding: 0 15px 0 0;
+    }
+    .store-link {
+      padding: 0 0 0 15px;
+    }
+  }
+
+}
+
+@include phone {
+  .index-store {
+    flex-direction: column;
+    .store-name {
+      padding: 0;
+    }
+    .store-link {
+      flex-direction: row;
+      padding: 0;
+      justify-content: space-around;
+      .store-link__discount {
+        display: none;
+      }
+      .store-link__discount-follow {
+        opacity: 1;
+      }
+    }
+  }
+}

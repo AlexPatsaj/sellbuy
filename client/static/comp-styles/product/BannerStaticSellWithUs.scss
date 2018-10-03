@@ -1,0 +1,79 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.banner-static__sell-with-us {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ED484F;
+    // width: 100%;
+    // max-width: 1200px;
+    margin: 40px auto;
+    .banner-staic__header {
+        font-size: 2.5em;
+        font-weight: 600;
+        color: #fff;
+        margin: 25px 0;
+    }
+    .btn {
+        margin-top: 0;
+    }
+}
+
+@include phone640 {
+    .banner-static__sell-with-us {
+        flex-direction: column;
+        .banner-staic__header {
+            font-size: 2em;
+            
+        }
+        .btn {
+            margin-bottom: 30px;
+        }
+    }
+}

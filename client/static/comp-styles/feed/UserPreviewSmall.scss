@@ -1,0 +1,171 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.feed-left__suggested-friend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+
+    .suggested-friend__avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 0px;
+        border: 1px solid #dfe3e9;
+        width: 40px;
+        min-width: 40px;
+        img {
+            height: 40px; /** was 60 super large */ 
+            width: 40px; /** was 60 super large */ 
+            min-width: 40px;
+            object-fit: cover;
+        }
+    }
+    .suggested-friend__general {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .suggested-friend__info {
+            margin-left: 10px;
+            .follow {
+                background-color: transparent;
+                color: #656565;
+                font-size: 1em;
+                padding: 0;
+                justify-content: flex-start;
+                svg {
+                    fill: #656565;
+                }
+                &:after, &:before {
+                    background-color: transparent;
+                }
+                &:hover {
+                    color: #ed484f;
+                    svg{
+                        fill: #ed484f;
+                    }
+                }
+            }
+        }
+        .suggested-friend__name {
+            margin-bottom: 5px;
+            margin-top:0;
+            white-space:nowrap; 
+        }
+
+        
+    } 
+    .suggested-friend__follow {
+        display: none;
+    }
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+.feed-left__suggested-friend .suggested-friend__general .suggested-friend__followers {
+    display: none;
+}
+.feed-left__suggested-friend .suggested-friend__general .suggested-friend__followers svg {
+    width: 12px;
+    height: 12px;
+    fill: #656565;
+}
+
+.feed-left__suggested-friend .suggested-friend__general .suggested-friend__followers .human-icon {
+    margin-left: 10px;
+}
+
+@include display1400 {
+
+    .suggested-friend__name {
+       margin-top:5px;
+    }
+
+    .suggested-friend__info {
+        padding-right:20px;
+    }
+
+    .feed-left__suggested-friend .suggested-friend__follow .btn {
+        padding: 6px;
+        margin-top: 5px;
+    }
+}
+
+@include phone640 {
+    .feed-left__suggested-friend .suggested-friend__follow .btn {
+        font-size:0.8em; 
+        padding: 10px 20px;
+        margin: 0;
+    }
+    .feed-left__suggested-friend .suggested-friend__general .suggested-friend__info .follow {
+        display: none;
+    }
+    .feed-left__suggested-friend .suggested-friend__follow {
+        display: flex;
+    }
+    .feed-left__suggested-friend .suggested-friend__general .suggested-friend__followers {
+        display: flex;
+    }
+}
+
+@include phone {
+    .feed-left__suggested-friends.mobile {
+        margin-bottom: 10px;
+    }
+
+
+    .suggested-friend__info {
+        padding-right:0;        
+    }
+    .feed-left__suggested-friends.mobile .friends-wrapper {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,97 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.may-like {
+    padding: 20px;
+    .may-like__header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    .slick-initialized .slick-slide {
+        padding: 10px;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+    .slider-block {
+        position: relative;
+    }
+    .slick-slider {
+        width: calc(100% - 40px);
+        margin: auto;
+    }
+    .-arrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        svg {
+            height: 50px;
+            width: 41px;
+        }
+        &:hover {
+            svg {
+                fill: #ed484f;
+            }
+        }
+    }
+    .-prev {
+        left: -10px;
+        transform: rotate(90deg)
+    }
+    .-next {
+        right: -10px;
+        transform: rotate(-90deg)
+    }
+}

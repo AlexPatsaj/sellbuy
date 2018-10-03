@@ -1,0 +1,250 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.dropdowns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    .normal-dropdown {
+        margin-top: 10px;
+    }
+}
+
+.product-page__orderbox {
+    background-color: #fff;
+    padding: 25px 25px 0px 25px;
+   .orderbox-product__title{
+       margin: 0 0 10px 0;
+       font-weight: 600;
+       font-size: 1.5em;
+   }
+   .availability {
+        display: flex;
+        margin: 10px 0;
+        .available {
+            margin: 0 10px;
+        }
+        .attention {
+            margin: 0 10px;
+            color: #ED484F;
+        }
+        .notify-me {
+            font-weight: 600;
+            cursor: pointer;
+            &:hover {
+                color: #ED484F;
+            }
+        }
+   }
+   .__block-price {
+       white-space: nowrap;
+       display: flex;
+       flex-direction: row;
+       align-items: baseline;
+       margin-top: 10px;
+       .reward-points {
+           font-size: .6em;
+           font-weight: normal;
+           color: #201e1e;
+           margin-left: 10px;
+       }
+   }
+   .orderbox-product__options {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       .orderbox-product__option {
+            width: 48%;
+            .normal-dropdown .dropdown__active {
+               padding: 5px;
+               font-weight: 600;
+            }
+            .normal-dropdown .dropdown__options {
+                top: 29px;
+            }
+            .normal-dropdown .dropdown__options .dropdown__option {
+                padding: 5px;
+            }
+            p {
+               margin: 15px 0 0 0;
+               color: #656565;
+            }
+        }
+   }
+   .orderbox-product__buttons {
+       display: flex;
+       justify-content: space-between;
+       margin-top: 20px;
+       margin-bottom: 37px;
+       .btn {
+            margin: 0;
+            padding: 10px 50px;
+            font-size: 1em;
+            max-width: 180px;
+       }
+   }
+   
+}
+
+@include tablet768 {
+    .product-page__orderbox .orderbox-product__options .orderbox-product__option {
+        font-size: .8em;
+    }
+}
+
+@include phone640 {
+    .product-page__orderbox .orderbox-product__options .orderbox-product__option {
+        font-size: 1em;
+    }
+    .product-page__orderbox .orderbox-product__options .orderbox-product__option .normal-dropdown .dropdown__active,
+    // .product-page__orderbox .orderbox-product__options .orderbox-product__option .normal-dropdown .dropdown__options .dropdown__option {
+    //     padding: 17px;
+    // }
+    .product-page__orderbox .orderbox-product__options .orderbox-product__option .normal-dropdown .dropdown__options {
+        top: 53px;
+    }
+    .product-page__orderbox {
+        margin-top: 55px;
+        padding: 45px 25px 0px 25px;
+        .media-activity {
+            display: none;
+        }
+        &.mobile-only {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .product-page__orderbox .orderbox-product__buttons {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        .btn {
+            max-width: none;
+            margin-bottom: 20px;
+            padding: 20px 20px;
+        }
+    }
+    .product-page__orderbox .orderbox-product__options {
+        flex-direction: column;
+        border-top: 1px solid #b7b7b7;
+        margin-top: 15px;
+    }
+    .product-page__orderbox.mobile-only .media-activity__mobile.mobile-only {
+        display: block;
+        .media__mobile {
+            display: flex;
+            align-items: center;
+            margin: 0 0 15px 0;
+            width: 100%;
+        }
+        a {
+            color: #ED484F;
+            padding: 5px 0;
+            border-bottom: 1px dotted #ED484F;
+        }
+        .avatars {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+        .avatar {
+            position: relative;
+            height: 34px;
+            width: 34px;
+            border: 2px solid #fff;
+            img {
+                height: 34px;
+                width: 34px;
+                object-fit: cover;
+            }
+            &:nth-child(1) {
+                left: 5px;
+                z-index: 9;
+            }
+            &:nth-child(3) {
+                right: 5px;
+            }
+        }
+        .like-widget {
+            margin-left: 0;
+        }
+        .share-widget {
+            position: relative;
+            left: unset;
+            right: unset;
+            top: unset;
+            bottom: unset;
+            margin-right: 10px;
+            width: 100%;
+        }
+        .share-save {
+            justify-content: space-between;
+            border-top: 1px solid rgb(230, 229, 229);
+            margin: 40px 0 0 0;
+            .__block-activity {
+                width: 50%;
+                padding: 20px 0;
+                
+                .save-widget {
+                    justify-content: center;
+                }
+                &:last-child {
+                    border-left: 1px solid rgb(230, 229, 229);
+                }
+            }
+        }
+    }
+}
+
+@include phone {
+    .product-page__orderbox .orderbox-product__options .orderbox-product__option {
+        width: 47%;
+        
+    }
+}

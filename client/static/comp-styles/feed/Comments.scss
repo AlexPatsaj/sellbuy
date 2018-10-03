@@ -1,0 +1,118 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.comments {
+    padding: 0 ;
+    background-color: #F6F6F6;
+}
+
+.comments-accordeon {
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    &:hover {
+        color: #ed484f;
+    }
+}
+
+
+
+
+.comment-likes {
+    display: flex;
+    margin-top: 10px;
+    .like-widget {
+        margin-left: 0;
+    }
+    .comment-reply {
+        color: #656565;
+    }
+}
+
+.add-comment {
+    border-top: 1px solid #DEE3E9;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    .user-avatar {
+        position: absolute;
+        overflow: hidden;
+        left: 20px;
+        top: 14px;
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        border: 1px solid #dfe3e9;
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            
+            margin: auto;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    textarea {
+        width: 100%;
+        border: none;
+        padding: 25px 20px 25px 75px;
+        min-height: 72px;
+        background-color: transparent;
+    }
+}
+
+@include phone {
+    .add-comment .user-avatar {
+        left: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .add-comment textarea {
+        padding: 25px 10px 15px 55px;
+    }
+}

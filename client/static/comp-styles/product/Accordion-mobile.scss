@@ -1,0 +1,95 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+
+.accordion-mobile {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    .accorion-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: 600;
+        padding: 10px 0;
+        margin-bottom: 0;
+        border-bottom: 2px solid #201e1e;
+        svg {
+            width: 18px;
+            height: 14px;
+            transition: all .2s linear;
+        }
+    }
+    .accordion-body {
+        overflow: hidden;
+        height: 0;
+       transition: all .2s linear;
+    }
+    .accordion-block {
+        &.opened {
+            .accorion-header {
+                svg{
+                    transform: rotate(180deg);
+                }
+            }
+            .accordion-body {
+                height: 100%;
+                overflow: visible;
+            }
+        }
+    }
+}
+
+@include tablet768 {
+    .accordion-mobile {
+        display: flex;
+        padding-bottom: 40px;
+    }
+}

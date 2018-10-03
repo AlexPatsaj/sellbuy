@@ -1,0 +1,170 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.feed-left__suggested-friends {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 10px 1.08px rgba(0, 0, 0, 0.07);
+    .feed-left__header {
+        margin: 10px 0;
+    }
+    &.mobile {
+        display: none;
+    } 
+}
+
+.feed-left__user {
+    .feed-user__user-name {
+        margin-bottom: 0px;
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+    .feed-user__login {
+        color: #656565;
+        margin-top: 5px;
+    }
+    .feed-user__media-activity {
+        color: #b7b7b7;
+        .media-activity__follow {
+            margin: 0 10px;
+        }
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: .8em;
+        margin-top: 20px;
+    }
+}
+
+
+
+@include tablet {
+    .feed-left__suggested-friends {
+        &.mobile {
+            display: none;
+            margin-top: 50px;
+            .friends-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .feed-left__suggested-friend {
+                    width: 47%;
+                }
+            }
+        }
+    }
+}
+
+@include phone640 {
+    .feed-left__suggested-friends.mobile {
+        display: block;
+        background-color: #fff;
+        padding: 25px 15px;
+        margin: 20px 0 30px 0;
+        box-shadow: 0px 3px 10px 1.08px rgba(0, 0, 0, 0.07);
+        h3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            border-bottom: 1px solid #e4e4e4;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            margin-top: 0px;
+            .see-more{
+                padding: 0;
+                font-weight: normal;
+                color: #656565;
+            }
+        }
+        .friends-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            .feed-left__suggested-friend {
+                width: 100%;
+                margin-bottom: 0px;
+                display: flex;
+                flex-direction: column;
+                max-width: 170px;
+                margin-right: 15px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .mobile-only {
+            display: flex;
+            align-items: center;
+        }
+    }
+    
+    .feed-left__suggested-friend .suggested-friend__general {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .suggested-friend__info {
+        width: 100%;
+        margin-left: 15px;
+        .suggested-friend__followers {
+            flex-wrap: nowrap;
+            .widget-ratings {
+                display: flex !important;
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+        }
+    }
+    .suggested-friend__name {
+        text-align: center;
+    }
+}

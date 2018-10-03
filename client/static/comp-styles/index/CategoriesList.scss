@@ -1,0 +1,110 @@
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.hp-categories {
+    padding: 50px 0;
+}
+.hp-categories .categories-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #201e1e;
+    .active-category {
+        position: relative;
+        background-color: #201e1e;
+        color: #fff;
+        padding: 15px 30px;
+        font-size: 1.3em;
+        svg {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            fill: #fff;
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .slick-slide {
+    margin: 0 10px;
+    }
+    /* the parent */
+    .slick-list {
+        margin: 0 -10px;
+    }
+    .slick-track {
+        display: flex;
+    }
+    .subcategories {
+        // display: flex;
+        // align-items: center;
+        overflow: hidden;
+        
+        .subcategory {
+            white-space: nowrap;
+            display: inline;
+            // padding: 0 20px;
+            a{
+                display: flex;
+                text-align: center;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+    .arrows {
+        display: flex;
+        .arrow {
+            transform: rotate(90deg);
+        }
+        .right {
+            transform: rotate(-90deg);
+        }
+    }
+}

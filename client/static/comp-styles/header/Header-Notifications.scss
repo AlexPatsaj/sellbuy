@@ -1,0 +1,242 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.notifications {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    svg {
+        fill: #201e1e;
+        margin: 0 7px;
+        width: 21px;
+        height: 22px;
+    }
+}
+
+.notifications {
+    &.open {
+        .notifications-dropdown {
+            transition: all 0s ease;
+            transform: scale(1);
+            opacity: 1;
+            z-index: 20;
+        }
+    }
+
+    .header__popup-close{
+      top: 54px;
+      right: -205px;
+    }      
+
+    .notifications-dropdown {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        width: 240px;
+        top: 54px;
+        left: -210px;
+        box-shadow: 0px 9px 25.92px 1.08px rgba(0, 0, 0, 0.07);
+        transition: all 0s ease; 
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+        min-width: 450px;
+        .dropdown-triangle-up {
+            right: 207px;
+        }
+        .notifications-dropdown__wrapper {
+            background-color: #fff;
+            padding: 20px 34px;
+            .notifications-dropdown__link {
+                display: flex;
+                justify-content: flex-start;
+                // border-bottom: 1px solid #ededed;
+                padding-bottom: 10px;
+                width: 100%;
+                a {
+                    text-decoration: none;
+                    color: #ed484f;
+                }
+            }
+            hr {
+                border: none;
+                border-bottom: 1px solid rgba(222, 227, 233, 1);
+            }
+            .notifications-dropdown__message {
+                display: flex;
+                align-items: flex-start;
+                margin-top: -2px;
+                .notifications-dropdown__interlocutor-avatar {
+                    margin-top: 19px;
+                }
+                .notifications-dropdown__message-text {
+                    color: #656565;
+                    line-height: 1.4;
+                    padding: 13px 0;
+                    // border-bottom: 1px solid #f0f0f2;
+                    padding-left: 13px;
+                    .notifications-dropdown__misc {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        margin-top: 5px;
+                        .notifications-dropdown__interlocutor-date {
+                            font-size: .9em;
+                        }
+                    }
+                    .notifications-dropdown__user-name {
+                        font-weight: 600;
+                    }
+                    a {
+                        color: #ed484f;
+                        text-decoration: none;
+                    }
+                    // &.img-contents {
+                    //     display: flex;
+                    //     flex-direction: column;
+                    //     align-items: center;
+                    //     flex-direction: row;
+                    //     img {
+                    //         margin-right: 20px;
+                    //     }
+                    // }
+                }
+                &:last-child {
+                    .notifications-dropdown__message-text {
+                        border-bottom: 1px solid transparent;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .notifications {
+        position: absolute;
+        right: 60px;
+        left: unset;
+        margin: auto;
+        width: 100%;
+        max-width: 40px;
+        top: 119px;
+        z-index: 100;
+        opacity: 0;
+        transition: all .3s ease;
+        display: none;
+        .notifications-dropdown {
+            left: unset;
+            right: -40px;
+            margin: auto;
+            .dropdown-triangle-up{
+                right: 46px;
+            }
+        }
+        svg {
+            width: 26px;
+            height: 27px;
+        }
+    }
+    .mobile-opened {
+        .notifications {
+            // opacity: 1;
+            // display: flex;
+            // justify-content: center;
+        }
+    }
+}
+
+@include tablet768 {
+    .notifications {
+        right: 210px;
+        left: unset;
+        top: 115px;
+        width: unset;
+    }
+    .mobile-opened {
+        .notifications {
+            // opacity: 1;
+            // display: flex;
+            // justify-content: center;
+            .notifications-dropdown {
+                left: -260px;
+                .dropdown-triangle-up {
+                    right: 155px;
+                }
+            }
+        }
+    }
+}
+
+@include phone640 {
+    .mobile-opened {
+        .notifications {
+            top: 144px;
+            left: 28px;
+            width: 44px;
+            right: unset;
+            transform: translate(-20px);
+            display: none;
+            opacity: 1;
+            .notifications-dropdown {
+                
+            }
+        }
+    }
+}
+
+@include phone {
+    .notifications {
+        display: none;
+        opacity: 0;
+        top: 116px;
+    }
+}

@@ -1,0 +1,288 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+.shop-info__buttons {
+    display: flex;
+    align-items: center;
+    margin: 15px 0 0px 0;
+    .buttons-wrapper {
+        display: flex;
+    }
+
+    .shop__message{
+        margin-left: 15px;
+    }
+}
+
+.shop-info__wrapper.container {
+    display: flex;
+    align-items: flex-start; /** the picture is top aligned with the shop name */ 
+    border-bottom: 1px solid rgb(233, 233, 233);
+    padding: 25px 0px;
+
+    .shop-info__avatar { 
+        margin-right: 30px;
+        border: 1px solid rgb(233, 233, 233);
+    }
+    
+    .shop-info__info {
+        width: 90%;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .shop-tags {
+        margin-bottom:5px;
+    }
+
+    h2.shop-info__subheader {
+        margin-bottom: 0px;
+        margin-top:0;
+        position:relative;
+        top:-5px;
+        .feed-left__store-media-parameters {
+            margin-left: 20px;
+        }
+    }
+
+    .shop__message{
+        margin-top: 0;
+        padding: 6px 15px;
+        font-size: .8em;
+        max-width: 112px;
+        border-color: #BEBEBE;
+        color: #868383;
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .shop-info__connect {
+        padding-right:5px;
+        .shop-info__share {
+            margin-left: 0;
+            svg {
+                fill: #BEBEBE;
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+                margin-bottom: 0px;
+                cursor: pointer;
+                &:hover {
+                    fill: #ed484f;
+                }
+            }
+        }
+    }
+
+    .shop-info__connectTitle{
+        margin-bottom:10px;
+    }
+}
+
+.shop-info__name {
+    .follow-friends {
+        margin-bottom: 15px;
+    }
+    .shop-followers {
+        display: flex;
+        align-items: center;
+        margin: 15px 0 15px 0;
+        .shop-follower-avatar {
+            position: relative;
+            &:nth-child(2) {
+                left: -7px;
+                margin-right: 10px;
+            }
+        }
+        .avatar {
+            width: 25px;
+            height: 25px;
+            min-width: 25px;
+            min-height: 25px;
+            border: 2px solid #fff;
+            img {
+                width: 25px;
+                height: 25px;
+                min-width: 25px;
+                min-height: 25px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@include tablet768 { 
+}
+
+@include phone640 { 
+    .shop-info__wrapper.container{
+        padding: 20px 0 10px 0; 
+        border-bottom:unset; 
+        position:relative;
+
+
+        .shop-info__info{ 
+            flex-direction:row;
+        }
+
+        .shop-followers{
+            display:none;
+        }
+
+        h2.shop-info__subheader {
+            display: flex;
+            flex-direction: column;
+            .feed-left__store-media-parameters {
+                margin-left: 0;
+            }
+        }
+
+        .shop-info__buttons {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .shop-info__buttons .shop-info__share {
+            margin-left: 0;
+            margin-top: 20px;
+        }
+
+        .shop-info__connect {  
+            .shop-info__share{            
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                svg {
+                    width:30px;
+                    height:30px; 
+                    margin-bottom:0px;
+                    margin-left:0; 
+                    margin-right:0;
+                }
+            }
+
+            p {
+                display:none;
+            }
+        } 
+
+        .shop-info__avatar {
+            position: absolute;
+            top: -109px;
+            width: 100px;
+            height: 100px;
+
+            img {
+                max-width:100%;
+            }
+        }
+    } 
+
+    .shop-info__buttons {
+        .shop__message {
+            width:112px; 
+            margin-left:20px;
+            display:block;
+            text-align:center;
+        }   
+    }
+
+    .shop-info__connect{
+        .shop__message{
+            display:none; 
+        }
+    }
+}
+
+@include phone { 
+    .shop-info__wrapper.container h2.shop-info__subheader {
+        margin-top: 15px;
+    }
+    .shop-info__wrapper.container .shop-info__info{ 
+        flex-direction:column;
+        align-items: flex-start;
+    }
+    .shop-info__wrapper.container .shop-info__info .info-wrapper{
+        width: 100%;
+    }
+
+    .shop-info__wrapper.container .shop-info__connect { 
+        width: 100%;
+        margin-top: 20px; 
+    }
+
+    .shop-info__wrapper.container .shop-info__connect .shop-info__share svg {
+        /*margin: 0 10px 10px 10px;
+        &:first-child {
+            margin-left: 0;
+        }*/
+    }
+
+    .shop-info__wrapper {
+        // flex-direction: column;
+        margin-top: 0px;
+        .shop-info__avatar {
+            margin-right: 0;
+        }
+        .__tags {
+            margin-right: 0;
+            // text-align: center;
+        }
+    }
+    .shop-info__name {
+        // text-align: center;
+    }
+    .shop-info__wrapper.container .shop-info__buttons {
+        // align-items: center;
+    }
+}

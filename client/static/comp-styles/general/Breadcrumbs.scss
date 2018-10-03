@@ -1,0 +1,110 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.breadcrumbs {
+    display: flex;
+    width: calc(100% - 200px) !important;
+    .breadcrumbs-list, .report-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 0;
+        margin-bottom: -20px;
+    }
+    .report-item {
+        justify-content: flex-end;
+        max-width: 100px;
+        span {
+            color: #b7b7b7;
+            cursor: pointer;
+            &:hover {
+                color: #ED484F;
+            }
+        }
+    }
+    .breadcrumbs-list__items {
+        display: flex;
+        list-style: none;
+        margin: 0 10px;
+        a {
+            color: #656565;
+        }
+        svg {
+            transform: rotate(-90deg);
+            width: 14px;
+            height: 28px;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            color: #201e1e;
+        }
+    }
+}
+
+@include phone640 {
+    .breadcrumbs {
+        .breadcrumbs-list {
+            padding-top: 0px;
+        }
+        .breadcrumbs-list__items {
+            display: none;
+            &.arrow-getback {
+                display: flex;
+                transform: rotate(180deg);
+                margin-right: 0;
+            }
+            &.active-category {
+                display: flex;
+            }
+        }
+    }
+}

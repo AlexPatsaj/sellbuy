@@ -1,0 +1,262 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+ 
+.hamburger-vertical-categories {
+    list-style: none;
+    padding: 0 20px;
+    margin-top: 30px;
+    .hamburger-menu__vertical-header {
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+    .hamburger-menu__vertical-elements {
+        margin: 10px 0;
+        a {
+            display: flex;
+            align-items: center;
+            color: #201e1e;
+            max-width: 150px;
+        }
+        .mail-amount {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 19px;
+            width: 19px;
+            border-radius: 50%;
+            color: #fff;
+            background: #ed484f;
+            margin-left: 10px;
+            font-size: .7em;
+        }
+        svg {
+            width: 14px;
+            height: 14px;
+            margin-right: 10px;
+        }
+    }
+    &:nth-child(4) {
+        margin-top: 15px;
+    }
+}
+
+.hamburger-content__getback {
+    svg {
+        transform: rotate(90deg);
+        height: 10px;
+        width: 10px;
+        margin-left: 18px;
+    }
+    .hamburger-content__getback-text {
+        padding-left: 5px;
+    }
+}
+
+.hamburger-menu__less-640 {
+    display:none; 
+    transform: translateX(-1000px);
+    display: flex;
+    flex-direction: column; 
+    max-width: 300px;
+    background-color: #fff;
+    z-index: 100;
+    // pointer-events: none;
+    position: absolute;
+    left: 0;
+    min-height: 100vh; /** we want it to grow as much as necessary, not be locked at screen height */ 
+
+    hr {
+        border: none;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    .hamburger-menu__horisontal-categories {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 0px 0;
+        padding: 0 10px;
+        list-style: none;
+        min-height: 38px; /** else flex will give this height:0 ; utter shit which I can't explain **/ 
+        .hamburger-menu__horisontal-elements {
+            padding: 10px;
+            width: 100%;
+            margin: 0 10px;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            height:38px;
+
+            &:first-child {
+                margin-left:0;
+            }
+
+            a {
+                color: #201e1e;                
+                margin: 0;
+            }
+        }
+    }
+    
+}
+
+header {
+    &.mobile-opened {
+        .header-menu {
+            .container {
+                .hamburger-menu { 
+                    .icon-bar {
+                        left: 330px;
+                        top: 40px;
+                        position: absolute;
+                        z-index: 999;
+                        &:after, &:before {
+                            background-color: #fff;
+                        }
+                    }
+                    .hamburger-menu__less-640 { 
+                        display: flex;
+                        transform: translateX(0px) translateY(-32px);
+                        .hamburger-content {
+                            .hamburger-content__wrapper {
+                                .hamburger-content__vertical {
+                                    padding:0; 
+                                    margin-top:30px;
+                                    .hamburger-content__getback {
+                                        font-size: 1.1em; 
+                                        padding: 10px 0;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: flex-start;
+                                        background-color:#f8f8f8;
+                                        svg {
+                                            position: relative;
+                                            top: 0px; 
+                                            width: 10px;
+                                            height: 20px;
+                                        }
+                                    }
+                                    .hamburger-vertical-categories {
+                                        margin: 10px 0;
+                                        list-style:none;
+                                        .hamburger-menu__vertical-header {
+                                            margin: 0;
+                                            padding:15px 0px;
+                                            font-weight:400;
+                                            color:#ccc;
+                                        }
+                                        .hamburger-menu__vertical-elements {
+                                            margin: 0;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            svg {
+                                                transform: rotate(-90deg);
+                                                width: 9px;
+                                                height: 7px;
+                                            }
+                                            a {
+                                                justify-content: space-between;
+                                                display: flex;
+                                                padding: 10px 0 10px 13px;
+                                                .arrow {
+
+                                                }
+                                                &.subCategory {
+                                                    padding-left:0;
+                                                }
+                                            }
+                                            &.goto {
+                                                a {
+                                                    width: 100%;
+                                                    max-width: unset;
+                                                    justify-content: space-between;
+                                                    display: flex;
+                                                    padding: 10px 0 10px 13px;
+                                                }
+                                            }
+                                            &.language-element {
+                                                justify-content: flex-start;
+                                                padding: 10px 0 10px 15px;
+                                                svg {
+                                                    width: 14px;
+                                                    height: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet768 {
+    .hamburger-menu__less-640 .hamburger-menu__horisontal-categories {
+        margin: 80px 0 0px 0;
+    }
+    .hamburger-menu__less-640 .hamburger-menu__horisontal-categories .hamburger-menu__horisontal-elements:first-child{
+        margin-left:15px;
+    }
+}
+
+@include phone640{
+    header.mobile-opened .header-menu .container .hamburger-menu .hamburger-menu__less-640 {
+        padding:0 0 0 15px;
+        transform: translateX(0) translateY(-70px);
+    }
+}
+
+@include phone320 {
+    /**  we are transporting a forest to water a flower, this is not the worst case.. but.. still  **/ 
+        .hamburger-menu__less-640{
+            & .hamburger-menu__horisontal-categories{
+                transform:translateX(-9px);
+            }
+        }
+}

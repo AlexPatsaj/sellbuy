@@ -1,0 +1,243 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css";
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+
+.feed-post__products {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &.display-block {
+        display: block;
+    }
+    .products-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 0 0px 20px;
+        font-size: 1.1em;
+        color: #656565;
+        font-weight: 600;
+        
+        .arrows {
+            display: flex;
+            position: relative;
+        }
+        .feed-post__hideProducts {
+            margin-left: auto;
+            margin-right: 60px;
+            font-weight: normal;
+            color: #ef5259;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    
+    .feed-post__showProducts {
+        cursor:pointer; 
+        text-align:center; 
+        text-decoration: underline;
+        color: #ef5259;
+        padding: 0px 20px 0px 20px;
+    }
+    .slick-slider {
+        .slick-list {
+            position: relative;
+            left: 10px;
+            width: calc(100% + -20px);
+        }
+        .slick-slide {
+            margin: 0 10px;
+        }
+    }
+}
+
+.feed-slider__wrapper {
+    position: relative;
+    img{ 
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+    }
+    .arrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+    }
+    .arrow-left {
+        left: 15px;
+        transform: rotate(180deg);
+    }
+    .arrow-right {
+        right: 15px;
+    }
+    &:hover {
+        .arrow {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+.slick-slider {
+    padding: 0 0px;
+    // margin-bottom: 15px;
+}
+
+.slick-prev, .slick-next {
+    position:relative; 
+    &:hover {
+        svg {
+            fill: #ef5259;
+        }
+    }
+    &:before, &:after {
+        display: none;
+    }
+}
+
+.slick-prev {
+    transform: rotate(90deg); 
+    right: 40px;
+    left: unset;
+    bottom: unset;
+    top: -4px;
+}
+
+.slick-next {
+    transform: rotate(-90deg); 
+    right: 20px;
+    bottom: unset;
+    top: 4px;
+}
+
+.post-body__product-gallery {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 18px 20px 18px;
+    
+    .post-body__product-image {
+        display: flex;
+        justify-content: center;
+        img {
+            width: calc(100% - 4px);
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}
+
+.slick-track {
+    display: flex;
+}
+
+@include phone640 {
+    .feed-slider__wrapper {
+        position: relative;
+        .feed-gallery {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 10;
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.678);
+                svg {
+                    margin-right: 10px;
+                }
+        }
+        .arrow {
+            display: none;
+        }
+        .slick-dots{ 
+            bottom: 20px;
+            .slick-active button{
+                &:before {
+                    color: #db1e1e;
+                }
+            }
+            li button {
+                &:before {
+                    color: #e4e4e4;
+                    opacity: 1;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    
+    .feed-post__products .feed-post__showProducts {
+        padding: 20px 20px 0px 20px;
+    }
+    .feed-post__products .products-header {
+        padding: 20px 20px 0px 20px;
+    }
+   
+    .post-body {
+        
+        .comments {
+            // display: none;
+        }
+    }
+}
+
+@include phone {
+    // .feed-post__products .products-header {
+    //     padding: 20px 0 20px 10px;
+    // }
+    // .slick-slider {
+    //     padding: 0;
+    // }
+}

@@ -1,0 +1,140 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+
+.shop-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .shop-menu__list {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        padding-left: 0;
+        list-style: none;
+        font-size: 1em;
+        padding: 10px 0;
+        .shop-menu__element {
+            margin-right: 5%;
+            white-space: nowrap;
+            // min-width: 100px;
+            color: #918c8c;
+            a {
+                color: #918c8c;
+                padding: 7px 0;
+            }
+            &:hover {
+                a {
+                    color: #ed484f;
+                }
+            }
+            &.active {
+                a {
+                    border-bottom: 3px solid #ed484f;
+                }
+            }
+        }
+    }
+    .shop-menu__search {
+        display: flex;
+        padding: 10px 0;
+        width: 100%;
+        max-width: 420px;
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            border: 1px solid #e4e4e4;
+            @include input-placeholder {
+                color: #656565;
+            }
+        }
+        .search-btn {
+            fill: #fff;
+        }
+    }
+}
+
+@include tablet {
+    .shop-menu .shop-menu__search {
+        max-width: 250px;
+    }
+}
+
+@include phone640 {
+    .shop-menu {
+        flex-direction: column;
+        
+    }
+    .shop-menu .shop-menu__search {
+        max-width: unset;
+    }
+    .shop-menu .shop-menu__list {
+        width: 100%;
+        display: none;
+        justify-content: space-around;
+    }
+}
+
+@include phone {
+    
+    
+    
+    .shop-menu .shop-menu__list .shop-menu__element {
+        margin-right: 0;
+    }
+}

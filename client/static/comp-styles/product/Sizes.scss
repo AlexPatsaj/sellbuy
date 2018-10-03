@@ -1,0 +1,111 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.orderbox-product__size {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    .sizes {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+    a {
+        color: #ED484F;
+        white-space: nowrap;
+        margin-left: 10px;
+    }
+    .size-option {
+        width: 20%;
+        
+        &.size {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            position: relative;
+            label {
+                width: calc(100% + 8px);
+                height: calc(100% + 8px);
+                position: absolute;
+                cursor: pointer;
+                border: 1px solid #ebebeb;
+                 display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            input {
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                position: absolute;
+                cursor: pointer;
+                &[type="radio"]:checked {
+                + label {
+                    opacity:1;
+                    background-color: #ED484F;
+                    color: #fff;
+                    border: 1px solid #ED484F;
+                    cursor: pointer;
+                    }
+                }
+            }
+            &:hover {
+                label {
+                    background-color: #ebebeb;
+                }
+            }
+        }
+    }
+}

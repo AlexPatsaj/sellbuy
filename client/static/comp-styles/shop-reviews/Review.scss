@@ -1,0 +1,116 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.review {
+    .customer-reply {
+        display: flex;
+        align-items: flex-start;
+        padding: 30px;
+    }
+    .customer-reply__avatar {
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+            min-width: 45px;
+            min-height: 45px;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+        }
+        .online {
+            font-size: .8em;
+            margin-top: 10px;
+            color: rgb(113, 228, 5);
+        }
+    }
+    .customer-post {
+        .user-name {
+            margin: 0 0 5px 0;
+            font-weight: 600;
+        }
+        .user-message {
+            .user-text {
+                margin: 10px 0;
+            }
+            img {
+                margin-right: 10px;
+                margin-top: 7px;
+                width: 100%;
+                height: auto;
+                max-width: 140px;
+                object-fit: cover;
+            }
+            
+        }
+    }
+    .date-time {
+        margin-left: 10px;
+    }
+    .seller-reply {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        border-top: 1px solid rgb(219, 219, 219);
+        padding: 30px 30px 30px 0;
+        width: calc(100% - 90px);
+        margin-left: auto;
+        .seller-reply__avatar {
+            margin-right: 20px;
+        }
+        .heading {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .text {
+            margin-top: 10px;
+        }
+    }
+}

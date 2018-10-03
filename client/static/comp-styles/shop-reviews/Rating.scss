@@ -1,0 +1,91 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px 10%;
+    position: relative;
+    top: 30px;
+    box-shadow: 0px 2px 10px 0px rgba(83, 80, 80, 0.07);
+    margin-bottom: 50px;
+    .extended-stats {
+        max-width: 350px;
+        width: 100%;
+        .stat {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .bar {
+            background-color: #F7D620;
+            height: 15px;
+            margin-left: 20px;
+        }
+        .amount {
+            margin-left: auto;
+        }
+    }
+    .total-stats {
+        .stat-summary {
+            display: flex;
+            align-items: baseline;
+        }
+        .score {
+            font-size: 4em;
+        }
+        .of, .total-scores {
+            color: #656565;
+        }
+        
+    }
+}

@@ -1,0 +1,70 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@include phone640 {
+    .may-like.mobile-only {
+        display: block;
+        padding-bottom: 30px;
+        h3 {
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+    }
+    .scrollbar-container {
+        display: flex;
+    }
+    .may-like__wrapper {
+        display: flex;
+        justify-content: space-between;
+        .product-slide {
+            width: 100%;
+            margin: 10px 15px 20px 0px;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.07);
+        }
+    }
+}

@@ -1,0 +1,205 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+.modal-overlayClass {
+    display: flex;
+    align-items: flex-start;
+    overflow: auto !important;
+}
+.modal-bodyClass {
+    margin: auto !important;
+    .modal-close {
+        right: 21px;
+        top: -6px;
+    }
+    .modal-form.sizeguide {
+        padding: 0 24px 24px 24px;
+        .react-tabs__tab-list {
+            justify-content: flex-start;
+            border-bottom: 2px solid #201e1e;
+        }
+        .react-tabs__tab-list .react-tabs__tab {
+            border-bottom: 2px solid transparent;
+        }
+        
+        .-header__menu {
+            justify-content: flex-end;
+            .active {
+                color: #ed484f;
+            }
+        }
+        .size-table {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 20px;
+            thead, tbody {
+                max-width: 300px;
+                width: 100%;
+                tr {
+                    display: flex;
+                    justify-content: space-between;
+                    th {
+                        text-align: center;
+                        width: 33.33%;
+                        max-width: 100px;
+                        padding: 10px 0;
+                        font-weight: 600;
+                    }
+                }
+                tr td {
+                    width: 33.33%;
+                    max-width: 100px;
+                    padding: 10px 0;
+                    &:nth-child(1), &.fw {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include display1400 {
+    .-header__menu a {
+        margin: 0;
+    }
+}
+
+@include display1200 {
+    .-header__menu {
+        width: calc(100% - 15px);
+    }
+    .-header__menu a {
+        padding: 7px 10px;
+    }
+}
+@include tablet {
+    .modal-bodyClass {
+        width: 90% !important;
+    }
+}
+@include tablet768 {
+    .-header__menu {
+        font-size: 1.4em;
+        top: 47px;
+    }
+}
+
+@include phone640 {
+    .react-tabs{ 
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        .react-tabs__tab-panel {
+            display: none;
+        }
+        .react-tabs__tab-panel--selected {
+            display: flex;
+            width: 70%;
+        }
+    }
+    
+    .modal-bodyClass .modal-form.sizeguide .react-tabs__tab-list {
+        flex-direction: column;
+        width: 30%;
+        min-width: 100px;
+        margin-top: 0;
+    }
+    .modal-bodyClass .modal-form.sizeguide .react-tabs__tab-list {
+        border-bottom: 2px solid transparent;
+    }
+}
+
+@include phone {
+    .react-tabs{ 
+        flex-direction: column;
+    }
+    .modal-bodyClass .modal-form.sizeguide .react-tabs__tab-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: unset;
+        
+        margin-bottom: 15px;
+    }
+    .react-tabs .react-tabs__tab-panel--selected {
+        width: 100%;
+    }
+    .react-tabs__tab-list .react-tabs__tab {
+        padding: 5px 0;
+        width: calc(50% - 2px);
+        margin: 1px;
+        background-color: #f7f7f7;
+    }
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        h1.any-block__header {
+            margin-bottom: 0;
+        }
+    }
+    .header-container h1.any-block__header {
+        border-bottom: 2px solid transparent;
+        padding-bottom: 0;
+    }
+    .modal-bodyClass .modal-form.sizeguide .-header__menu {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        justify-content: space-between;
+        border-bottom: 2px solid #ed484f;
+        width: 100%;
+        margin: 20px 0;
+    }
+}

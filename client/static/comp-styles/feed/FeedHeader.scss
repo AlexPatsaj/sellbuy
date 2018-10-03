@@ -1,0 +1,123 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.feed-header  {
+    position: relative; 
+    
+    .feed-header__menu {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 39px;
+        font-size:2.09em;
+        a {
+            color: #201e1e;
+            margin: 0 17px;
+            font-size: .8em;
+            padding: 7px 20px;
+            &.active {
+                color: #ed484f;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@include phone640 {
+    .feed-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100vw;
+        padding: 15px;
+        .any-block__header {
+            padding: 0;
+            border-bottom: 1px solid transparent;
+            margin: 0;
+        }
+        .feed-header__menu {
+            position: relative;
+            font-size: 1.2em;
+            justify-content: space-between;
+            top: unset;
+            & a {
+                margin:0 5px;
+                background-color: #fff;
+                border-radius: 20px;
+                &.active {
+                    color: #fff;
+                    border-radius: 20px;
+                    background-color: #ed484f;
+                }
+                &:hover {
+                    color: #ed484f;
+                }
+            }
+        }
+    }
+}
+
+@include phone {
+    .feed-header {
+        .feed-header__menu {
+            & a {
+                margin: 0 5px;
+                padding: 7px 10px;
+            }
+            
+        }
+        .any-block__header {
+            font-size: 1.4em;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.707 15.287">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-width: 0.5px;
+      }
+
+      .cls-1 {
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Group_4347" data-name="Group 4347" transform="translate(-0.25 -0.25)">
+    <g id="Group_3724" data-name="Group 3724" transform="translate(0.5 3.658)">
+      <g id="Group_3723" data-name="Group 3723">
+        <path id="Path_1418" data-name="Path 1418" class="cls-1" d="M7.893,8.739l4.813,2.387L6.584,14.168.5,11.126,5.352,8.7" transform="translate(-0.5 -8.7)"/>
+        <path id="Path_1419" data-name="Path 1419" class="cls-1" d="M12.707,31,6.584,34.042.5,31" transform="translate(-0.5 -22.413)"/>
+        <path id="Path_1423" data-name="Path 1423" class="cls-2" d="M0,0V6.161" transform="translate(12.207 2.426)"/>
+        <line id="Line_153" data-name="Line 153" class="cls-1" y2="6.161" transform="translate(6.084 5.468)"/>
+        <path id="Path_1422" data-name="Path 1422" class="cls-2" d="M0,0V6.161" transform="translate(0 2.426)"/>
+      </g>
+    </g>
+    <g id="Group_3725" data-name="Group 3725" transform="translate(4.736 0.5)">
+      <line id="Line_155" data-name="Line 155" class="cls-1" y1="4.698" transform="translate(1.848)"/>
+      <path id="Path_1420" data-name="Path 1420" class="cls-1" d="M15.235,2.348,13.348.5,11.5,2.348" transform="translate(-11.5 -0.5)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,1 @@
+export const GMAPS_KEY = "AIzaSyC7xBxTpwEulQv4bC2E-W5LzpQtN7dLajw";

@@ -1,0 +1,84 @@
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.FriendsTab {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+
+  &-item {
+    flex-grow: 1;
+    background-color: #ACACAC;
+
+    &:hover {
+      background-color: darken(#ACACAC, 5%);
+    }
+
+    & > a {
+      padding: 0.85rem 0;
+      text-align: center;
+      display: block;
+      font-size: 16px;
+      color: #ffffff;
+
+      &:hover {
+        color: #ffffff;
+      }
+
+    }
+
+    &.is-active {
+      background-color: #292A3C;
+
+      &:hover {
+        background-color: darken(#292A3C, 5%);
+      }
+    }
+  }
+}

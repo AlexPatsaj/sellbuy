@@ -1,0 +1,77 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.map {
+    width: 100%;
+    margin: 20px 0 20px 0;
+    .map-wrapper {
+        width: 100%;
+        height: 300px;
+        max-height: 400px;
+        .geotag {
+            fill: #ed484f;
+        }
+    }
+    .addresses-list {
+        padding-left: 0;
+        list-style: none;
+        color: #656565;
+        .address-point {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        svg {
+            fill: #656565;
+            width: 17px;
+            height: 20px;
+            margin-right: 10px;
+           
+        }
+    }
+}

@@ -1,0 +1,525 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+.add-post {
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 10px 1.08px rgba(0, 0, 0, 0.07);
+    .images-droparea {
+        padding-bottom: 10px;
+    }
+    .add-post__avatar {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        overflow: hidden;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #dfe3e9;
+        margin-right: 20px;
+    }
+    .add-post__textarea, .add-post__title {
+        width: 100%;
+        padding: 0px 20px;
+        textarea, input {
+            width: 100%;
+            border: none;
+            box-shadow: unset;
+            padding: 10px 0 20px 30px;
+            color: #8b8a8a;
+            @include input-placeholder {
+                color: #b7b7b7;
+            }
+        }
+    }
+    .add-post__controls, .add-post-modal__controls {
+        bottom: unset;
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
+        border-top: 1px solid #f7f7f8;
+        align-items: center;
+        bottom: 0px;
+        flex-wrap: nowrap;
+        flex-direction:column;
+        .add-post-additional {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px 0 10px 0px;
+            width: 80%; 
+            flex-direction: row;
+            .file-input {
+                input {
+                    opacity: 0;
+                    display: none;
+                }
+            }
+            &.empty {
+              flex-direction:row; 
+              
+              .add-product {
+                margin-top:0;
+                width:unset;
+              }
+
+              .add-images {
+                width:unset;
+              }
+            }
+
+            .add-product {
+                width:100%;
+                margin-top: 20px;
+                svg {
+                    // margin-bottom: 5px;
+                }
+            }
+            .add-images {
+              width:100%;
+            }
+            .add-image {
+                display: flex;
+                align-items: center;
+                position: relative;
+                top: 1px;
+                width: 100%;
+                label {
+                    display: flex;
+                    align-items: center;
+                }
+
+                input {
+                    display: none;
+                }
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    cursor: pointer;
+                    fill: #95989A;
+                }
+                &:hover {
+                    svg {
+                        fill: #ed484f;
+                    }
+                }
+            }
+
+            svg {
+                fill: #95989A;
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                &:hover {
+                    fill: #ed484f;
+                }
+            }
+        }
+    }
+    .add-post-modal__controls {
+        position: relative;
+        .add-post-additional {
+            flex-direction: column;
+        }
+    }
+    
+   
+}
+
+.add-post_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .add-post_share {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+            margin-right: 20px;
+        }
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: #656565;
+            margin-right: 10px;
+            cursor: pointer;
+            &:hover {
+                fill: #ED484F;
+            }
+        }
+    }
+}
+
+.add-post-send {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+    font-size: .9em;
+    .add-post__preview {
+        color: #656565;
+        cursor: pointer;
+        &:hover {
+            color: #ed484f;
+        }
+    }
+    .btn {
+        margin-top: 0;
+        margin-left: 30px;
+        padding: 7px 25px;
+        font-size: 1em;
+    }
+}
+
+
+/**. this is one of those cases where we want  to apply these styles here only 
+
+
+I MEANT THE MODAL.... NOT THE POST STYLES!! WE SHOULD NOT HAVE REPEATED CLASS DEFINITIONS ON THE SAME FILE. */ 
+// .postModal {
+//     .modal-close {
+//         position: absolute;
+//         z-index: 9;
+//         right: 20px;
+//         top: 0px;
+//         font-size: 3em;
+//         cursor: pointer;
+//         &:hover {
+//             color: #ed484f;
+//         }
+//     }
+
+//     .add-post__controls { /** same class on the add post on top of the feed ***/ 
+//       .add-post-additional {
+//         flex-direction:column;
+//       }
+
+//       svg{
+//         margin-right:20px;
+//       }
+//     }
+
+//     .modal-overlayClass {
+//         display: flex;
+//         /** this particular modal is easilly too tall to be fixed, implementing a scroll for the parts that grow would mean that we need to calculate the height of those components 
+//     depending on the window height.  **/
+//     }
+
+//     .modal-bodyClass {
+//         max-width: 900px;
+//     }
+
+//     .add-form {
+//         .modal-form {
+//             padding: 48px 85px;
+//         }
+//         .add-post {
+//             .add-post__textarea {
+//             }
+//         } 
+//     }
+// }
+
+
+.add-product-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .product-block-add{
+        width: 49%;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    .product-block {
+        // margin-right: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        &.empty {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            border: 1px solid #E3E3E3;
+            width: 50%;
+            svg {
+                margin: 0;
+            }
+            &:hover {
+                border: 1px solid #656565;
+            }
+        }
+    }
+}
+
+.images-droparea {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    .droparea-image-wrapper {
+        margin-right: 20px;
+        margin-top: 5px;
+        position: relative;
+        cursor: pointer;
+        .droparea-image-remove {
+            position: absolute;
+            right: 8px;
+            top: -5px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 8;
+            font-size: 2em;
+            opacity: 0;
+        }
+        img {
+            max-width: 90px;
+            max-height: 90px;
+            min-width: 90px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        &:hover {
+            background-color: rgb(119, 119, 119);
+            .droparea-image-remove {
+                opacity: 1;
+            }
+            img {
+                filter: brightness(50%);
+            }
+        }
+    }
+    .droparea-square {
+        padding: 36px 40px 36px 40px;
+        border: 1px solid #E3E3E3;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        svg {
+            margin: 0 !important;
+            fill: #95989A;
+        }
+        &:hover {
+            border: 1px solid #656565;
+            svg {
+                fill: #656565;
+            }
+        }
+    }
+    input[type="file"] {
+        display: none;
+    }
+    &:hover {}
+}
+@include display1200 {
+    .product-block .product-picture, .product-block-add .product-picture {
+        width: 35%;
+    }
+    .product-block-add .product-info {
+        width: 65%;
+    }
+}
+@include tablet {
+    .add-product-wrapper {
+        flex-direction: column;
+    }
+    .add-product-wrapper .product-block-add {
+        width: 100%;
+    }
+}
+
+@include phone640 {
+    .add-product-wrapper {
+        flex-direction: row;
+    }
+    .add-product-wrapper .product-block-add {
+        width: 49%;
+    }
+    .modal-wrapper.add-form {
+        .modal-form {
+            padding: 30px;
+        }
+    }
+    .add-post-send {
+        padding: 15px 20px 15px 0;
+        .btn {
+            margin-left: 15px;
+        }
+    }
+    .add-post .add-post__controls .add-post-additional {
+        padding: 15px 0 15px 20px;
+    }
+    .modal-bodyClass {
+        margin: unset !important;
+        margin-bottom: auto;
+    }
+    .images-droparea .droparea-image-wrapper img {
+        max-width: 40px;
+        max-height: 40px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .modal-close {
+        right: 40px;
+        top: 20px;
+    }
+    .modal-wrapper.add-form .add-post .add-post__textarea textarea {
+        min-height: 80px;
+        padding: 28px 40px 20px 65px;
+    }
+    .images-droparea .droparea-square {
+        padding: 10px 11px 10px 10px;
+    }
+    .add-product-wrapper .product-block {
+        width: 47%;
+        margin-right: 5px;
+    }
+    // .product-block img {
+    //     max-width: 80px;
+    //     object-fit: cover;
+    // }
+    .images-droparea .droparea-image-wrapper {
+        margin-right: 10px;
+    }
+}
+
+@include phone {
+    .add-product-wrapper {
+        flex-direction: column;
+    }
+    .add-product-wrapper .product-block-add {
+        width: 100%;
+    }
+    // .add-post .add-post__textarea textarea {
+    //     min-height: 200px;
+    // }
+    // .modal-wrapper.add-form .modal-form {
+    //     padding: 15px;
+    // }
+    // .modal-close {
+    //     font-size: 2em;
+    //     right: 37px;
+    //     top: 23px;
+    // }
+    // .add-post_bottom {
+    //     flex-direction: column;
+    //     margin-top: 20px;
+    // }
+    // .add-post-send {
+    //     justify-content: center;
+    // }
+    // .add-post {
+    //     hr {
+    //         bottom: 72px;
+    //         width: calc(100% - 30px);
+    //     }
+    // }
+
+    // .add-post .add-post__controls {
+    //     width: 100%;
+    //     padding: 0 10px;
+    // }
+    // .add-post-send {
+    //     // width: 100%;
+    //     padding: 20px 0;
+    // }
+    // .add-post .add-post__controls .add-post-additional {
+    //     padding-left: 0;
+    //     svg {
+    //         margin-right: 10px;
+    //     }
+    // }
+    // .add-post-send .btn {
+    //     margin-left: 15px;
+    // }
+    // .add-post .add-post__controls .add-post-additional .add-image svg {
+    //     margin-right: 0px;
+    // }
+    // .add-product-wrapper .product-block {
+    //     width: 100%;
+    //     max-height: 140px;
+    // }
+    // .add-product-wrapper {
+    //     justify-content: flex-start;
+    // }
+    // .product-block img {
+    //     max-width: unset;
+    //     width: 100%;
+    // }
+    // .add-product-wrapper .product-block.empty {
+    //     padding: 10px 0;
+    // }
+}

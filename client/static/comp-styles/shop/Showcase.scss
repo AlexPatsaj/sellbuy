@@ -1,0 +1,94 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+.shop_showcase {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .showcase-wrapper {
+        width: 80%;
+        padding-left:30px;
+        background-color: #fff;
+        padding: 30px;
+        margin-top: 25px;
+    }
+}
+
+@include tablet {
+    .shop_showcase {
+        justify-content: flex-end;
+        .showcase-wrapper {
+            width: 75%;
+            padding:10px 0px;
+        }
+    }
+}
+
+@include tablet768 {
+    .shop_showcase {
+        .showcase-wrapper {
+            padding: 0;
+        }
+    }
+}
+
+@include phone640 {
+    .shop_showcase.container {
+        width: 100%;
+        max-width: 100%;
+    }
+    .shop_showcase {
+        flex-direction: column;
+        .showcase-wrapper {
+            width: 100%;
+            
+        }
+    }
+}

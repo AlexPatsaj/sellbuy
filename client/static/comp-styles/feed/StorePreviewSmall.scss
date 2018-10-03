@@ -1,0 +1,207 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.feed-left__store {
+    display: flex;
+    
+    .feed-left__avatar, .feed-left__avatar-mobile {
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+        height: 40px;
+        width: 40px;
+        min-width: 40px;
+        border: 1px solid #dfe3e9;
+        img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+    .feed-left__store-info {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        .feed-left__avatar-mobile {
+            // display: none;
+        }
+        .store-name__wrapper {
+            overflow: hidden;
+            .follow {
+                background-color: transparent;
+                color: #656565;
+                font-size: 1em;
+                padding: 0;
+                justify-content: flex-start;
+                svg {
+                    fill: #656565;
+                }
+                &:after, &:before {
+                    background-color: transparent;
+                }
+                &:hover {
+                    color: #ed484f;
+                    svg{
+                        fill: #ed484f;
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        color:#201e1e;
+    }
+}
+.feed-left__store .feed-left__store-name {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0px;
+}
+.feed-left__store-media-parameters {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    
+}
+
+.feed-left__store-items {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    .feed-left__store-item-picture {
+        width: calc(33.333% - 2px);
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .feed-more-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .8em;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            color: #fff;
+            z-index: 10;
+        }
+        &:last-child {
+            cursor: pointer;
+            img {
+                filter: brightness(50%);
+            }
+        }
+    }
+}
+@include display1600 {
+
+}
+@include tablet {
+    .feed-left__store .feed-left__avatar {
+        height: 50px;
+        width: 50px;
+        min-width: 50px;
+        img {
+            height: 50px;
+            width: 50px;
+            min-width: 50px;
+        }
+    }
+    .feed-left__store .feed-left__store-info .store-name__wrapper a span{
+        white-space: nowrap;
+    }
+    .feed-left__store .feed-left__avatar, .feed-left__store .feed-left__avatar-mobile {
+        height: 30px;
+        width: 30px;
+        min-width: 30px;
+        margin-right: 5px;
+        img {
+            height: 30px;
+            width: 30px;
+            min-width: 30px;
+        }
+    }
+}
+@include tablet768 {
+    .feed-left__store .feed-left__store-info .store-name__wrapper a span{
+        white-space: pre-wrap;
+    }
+    .feed-left__store .feed-left__store-info .feed-left__avatar-mobile {
+        display: flex;
+        height: 40px;
+        width: 40px;
+        min-width: 40px;
+        img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
+@include phone {
+    .feed-left__stores.mobile .stores-wrapper .feed-left__store {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .feed-left__store .feed-left__avatar {
+        display: none;
+    }
+    
+    .feed-left__store .feed-left__store-info {
+        margin-bottom: 10px;
+    }
+    .feed-left__store-media-parameters {
+        margin-bottom: 0;
+    }
+    
+}

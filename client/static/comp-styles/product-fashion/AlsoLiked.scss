@@ -1,0 +1,94 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css";
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.also-liked  {
+    position: relative;
+    .also-liked__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 3px solid #ed484f;
+        h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-top: 0;
+        }
+    }
+    // .-arrow {
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     margin: auto;
+    //     display: flex;
+    //     align-items: center;
+    //     cursor: pointer;
+    //     svg {
+    //         height: 50px;
+    //         width: 41px;
+    //     }
+    //     &:hover {
+    //         svg {
+    //             fill: red;
+    //         }
+    //     }
+    // }
+    // .-prev {
+    //     left: -10px;
+    //     transform: rotate(90deg)
+    // }
+    // .-next {
+    //     right: -10px;
+    //     transform: rotate(-90deg)
+    // }
+    .slick-list {
+        padding-bottom: 30px;
+    }
+}

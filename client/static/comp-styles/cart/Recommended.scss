@@ -1,0 +1,162 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css";
+
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.slick-slider.slick-initialized {
+    margin-bottom: 50px;
+    width:calc(100% - 60px); 
+
+    .slick-list {
+        .slick-track {
+            display: flex;
+            .slick-slide {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                div {
+                    width: 100%;
+                    margin: 0 7px;
+                    .recommended-slide {
+                        width: 100%;
+                        cursor: pointer;
+                        box-shadow: 0px 2px 10px 0px rgba(83, 80, 80, 0.07);
+                        background-color:#fff;
+                        a {
+                            display: flex;
+                            flex-direction: column;
+                            color: #201e1e;
+                            img {
+                                object-fit: cover;
+                                width: 100%;
+                                display: flex;
+                            }
+                            h3 {
+                                padding: 0;
+                                margin: 0;
+                                font-size: 1.2em;
+                                padding: 18px 18px 5px 18px;
+                                &:hover {
+                                    color: #ed484f;
+                                }
+                            }
+                            .recommended-shipping {
+                                padding: 5px 18px 5px 18px;
+                                color: #656565;
+                                margin: 0;
+                            }
+                            .recommended-price {
+                                padding: 5px 18px 25px 18px;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    justify-content: space-around;
+}
+
+.recommended {
+    margin-top: 20px;
+    overflow: hidden;
+
+    .recommended-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 8px;
+        border-bottom: 4px solid #000;
+        margin-bottom: 27px;
+        .recommended-h3 {
+            padding: 0;
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.4em;
+            color: #201e1e;
+        }
+        a {
+            font-weight: 600;
+            color: #201e1e;
+            text-decoration: none;
+        }
+    }
+
+    .recommended-arrows {
+        display: flex;
+        align-items:center;
+    }
+
+    .arrow { 
+      transform:scale(0.6);
+    }
+
+    .arrow-left {
+      transform:scale(0.6) rotate(180deg);
+    }
+}
+
+@include tablet768 { 
+  .slick-slider.slick-initialized {
+    max-width: 84%;
+    margin: 0 auto;
+    
+    .slick-list .slick-track .slick-slide div {
+      margin:0;
+    }
+  }
+  
+}

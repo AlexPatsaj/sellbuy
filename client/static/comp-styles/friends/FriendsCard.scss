@@ -1,0 +1,124 @@
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.FriendsCard {
+  display: flex;
+  background-color: #ffffff;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+
+  &-avatar {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 80px;
+    overflow: hidden;
+    align-self: center;
+    font-size: 26px;
+
+    @include tablet {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      min-height: 60px;
+      border-radius: 60px;
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+
+    @include display1200 {
+      flex-direction: row;
+    }
+  }
+
+  &-content {
+    margin-right: 15px;
+    &-type {
+      font-size: 10px;
+    }
+    &-name {
+      font-size: 16px;
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      &-followers {
+        margin-left: 10px;
+        & > svg {
+          width: 9px;
+          height: 10px;
+        }
+      }
+    }
+  }
+  &-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1;
+    & > .btn {
+      padding: 4px 10px;
+      margin-top: 0;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    @include display1200 {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

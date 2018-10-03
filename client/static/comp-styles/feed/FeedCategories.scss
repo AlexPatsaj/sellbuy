@@ -1,0 +1,132 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+.feed-categories {
+    margin: 30px 0;
+    .feed-categories-list {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0;
+        list-style: none;
+        
+        .feed-categories-item {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 2px;
+            text-transform: uppercase;
+            &.active {
+                background-color: #201e1e;
+                color: #fff;
+                position: relative; 
+                svg {
+                    position: absolute;
+                    right: 5px;
+                    bottom: 5px;
+                    fill: #fff;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            &:hover {
+                background-color: #ED484F;
+                color: #fff;
+            }
+        }
+        .dropdown-feed__categories {
+            display: flex;
+            width: 100%;
+            &:first-child {
+                background-color: #fff;
+                color: #201e1e;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .feed-categories .feed-categories-list .feed-categories-item {
+        padding: 10px 7px;
+        font-size: .8em;
+    }
+    .feed-categories .feed-categories-list .feed-categories-item.active {
+        padding: 10px 20px;
+    }
+}
+
+@include phone640 {
+    .feed-categories {
+        .feed-categories-list {
+            justify-content: space-between;
+            flex-direction: column;
+            position: relative;
+            .feed-categories-item.active {
+                width: 100%;
+                max-width: unset;
+                &:hover + .dropdown-feed__categories {
+                    transform: scaleY(1);
+                }
+            }
+            .dropdown-feed__categories {
+                position: absolute;
+                top: 38px;
+                flex-direction: column;
+                z-index: 20;
+                background-color: #fff;
+                padding-bottom: 20px;
+                display:none; 
+
+                &.opened {
+                    display: block;
+                }
+            }
+        }
+    }
+}

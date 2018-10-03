@@ -1,0 +1,74 @@
+@mixin display1600 {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin display1400 {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin display1200 {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin tablet768 {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone640 {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+.f6f6f7 {
+    background-color: #f6f6f7;
+    padding-bottom: 30px;
+}
+.reviews {
+    display: block;
+    background-color: #fff;
+    padding: 20px 90px;
+    position: relative;
+    top: 30px;
+    margin-bottom: 60px;
+    box-shadow: 0px 2px 10px 0px rgba(83, 80, 80, 0.07);
+    .reviews-header {
+        display: flex;
+        align-items: baseline;
+    }
+    .normal-dropdown  {
+        max-width: 200px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        width: 100%;
+    }
+    .btn {
+        margin: 30px auto 60px auto;
+        max-width: 300px;
+    }
+}

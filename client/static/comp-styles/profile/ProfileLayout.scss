@@ -1,0 +1,83 @@
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.ProfileLayout {
+  &-content {
+    display: flex;
+    padding: 2rem 0;
+  }
+  &-menu {
+    min-width: 250px;
+  }
+  &-body {
+    width: 100%;
+  }
+  &-legend {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+@include tablet {
+  .ProfileLayout {
+    &-menu {
+      min-width: 200px;
+    }
+  }
+}
+
+@include phone640 {
+  .ProfileLayout {
+    &-content {
+      flex-direction: column;
+    }
+    &-menu {
+      min-width: inherit;
+    }
+  }
+}

@@ -1,0 +1,235 @@
+@mixin display1600 {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin display1400 {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin display1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+.sbp-search-stores {
+  & .sbp-search-stores__header {
+    display: flex;
+    margin-bottom: 30px;
+
+    .sbp-search-stores__sort {
+      display: flex;
+      flex: 1;
+      align-items: center;
+
+      .sbp-search-stores__sort-label {
+        color: #939393;
+        margin-right: 5px;
+      }
+    }
+
+    & > div {
+      margin-left: 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    & .sbp-search-stores__field {
+      display: flex;
+      flex: 1;
+      align-items: center;
+    }
+
+    & .sbp-search-stores__counts {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-end;
+      & .normal-dropdown {
+        display: none;
+      }
+      & a {
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .sbp-search-stores__filter {
+      display: flex;
+      flex-direction: row;
+      & > div {
+        margin-left: 15px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+      .sbp-search-stores__filter-mobile-label {
+        display: none;
+      }
+    }
+  }
+
+  .sbp-search-stores__filter-btn {
+    display: none;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #eeeeee;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .mobile-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    z-index: 1040;
+    .filter-close {
+      position: absolute;
+      left: 5%;
+      top: 50px;
+      color: #fff;
+      font-size: 4em;
+      display: block;
+    }
+  }
+}
+
+@include tablet768 {
+  .sbp-search-stores {
+    .sbp-search-stores__header {
+      .sbp-search-stores__filter {
+        position: fixed;
+        top: 0;
+        z-index: 1050;
+        right: -100%;
+        bottom: 0;
+        background-color: white;
+        padding: 20px;
+        min-width: 80%;
+        max-width: 80%;
+        flex-direction: column;
+        transition: right 0.3s linear;
+        &.open {
+          right: 0;
+        }
+        > .sbp-search-stores__filter-mobile-label {
+          display: block;
+          margin: 0 -20px;
+          padding: 0 20px;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 15px solid #eeeeee;
+          text-transform: uppercase;
+        }
+        & > div {
+          &:first-of-type {
+            margin-left: -20px;
+          }
+        }
+        > .normal-dropdown {
+          width: auto;
+          max-width: none;
+          margin: 0 -20px;
+          padding: 0 20px;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          :not(:last-child) {
+            border-bottom: 5px solid #eeeeee;
+          }
+          > .dropdown__active {
+            position: relative;
+          }
+        }
+      }
+    }
+    .mobile-bg {
+      visibility: visible;
+    }
+    .sbp-search-stores__filter-btn {
+      display: block;
+    }
+  }
+}
+
+@include phone640 {
+  .sbp-search-stores {
+    .sbp-search-stores__header {
+      .sbp-search-stores__sort {
+        margin-left: 0;
+        .sbp-search-stores__sort-label {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+
+@include phone {
+  .sbp-search-stores {
+    .sbp-search-stores__header {
+      .sbp-search-stores__sort {
+        margin-left: 0;
+        width: 100%;
+      }
+      .sbp-search-stores__counts {
+        margin-left: 0;
+        width: 100%;
+        & .normal-dropdown {
+          display: block;
+        }
+      }
+      .sbp-search-stores__filter-label {
+        display: none;
+      }
+      .sbp-search-stores__filter-label ~ a {
+        display: none;
+      }
+    }
+  }
+}
